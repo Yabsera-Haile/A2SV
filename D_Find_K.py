@@ -2,13 +2,20 @@ t = int(input())
 
 for _ in range(t):
     [n, k] = list(map(int, input().split()))
-    nums = list(map(int, input().split()))
-    diff = 0
-    index = 0
-    for _ in range(n-1):
-        diff += (nums[index]-diff)
-        index += 1
-    if abs(nums[index]-diff) == k:
-        print("YES")
-    else:
+    nums = list(set(map(int, input().split())))
+    
+    nums.sort()
+    left = 0
+    right = len(nums)-1
+    found = False
+    while left < right :
+        if nums[right]-nums[left] == k:
+            print("YES")
+            found = True
+            break
+        elif nums[right]-nums[left] > k:
+            right -= 1
+        else:
+            left += 1
+    if not found:
         print("NO")
