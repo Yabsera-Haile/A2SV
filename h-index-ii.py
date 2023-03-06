@@ -6,12 +6,13 @@ class Solution:
 
         while left<=right:
             mid=(left+right)//2
-            count=0
-            for cite in citations:
-                if cite>=mid:
-                    count+=1
+            # count=0
+            # for cite in citations:
+            #     if cite>=mid:
+            #         count+=1
+            curr=bisect_left(citations,mid)
                     
-            if count>=mid:
+            if len(citations)-curr>=mid:
                 result=max(result,mid)
                 left=mid+1
             else:
