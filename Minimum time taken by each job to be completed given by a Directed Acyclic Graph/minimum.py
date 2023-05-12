@@ -24,11 +24,11 @@ class Solution:
             l=len(queue)
             for _ in range(l):
                 curr=queue.popleft()
-                result.append(time)
+                result[curr]=str(time)
                 for neigh in graph[curr]:
                     count[neigh]-=1
                     if count[neigh]==0:
                         queue.append(neigh)
             time+=1
         
-        return result
+        return " ".joint(result)
