@@ -31,4 +31,4 @@ class Solution:
                         queue.append(neigh)
             time+=1
         
-        return " ".joint(result)
+        return " ".join(result)
