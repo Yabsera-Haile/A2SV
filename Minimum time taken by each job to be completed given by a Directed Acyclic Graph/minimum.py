@@ -18,13 +18,13 @@ class Solution:
             if count[i]==0:
                 queue.append(i)
         print(queue)
-        result=[]
+        result=[0]*n
         time=1
         while queue:
             l=len(queue)
             for _ in range(l):
                 curr=queue.popleft()
-                result[curr]=str(time)
+                result[curr-1]=str(time)
                 for neigh in graph[curr]:
                     count[neigh]-=1
                     if count[neigh]==0:
