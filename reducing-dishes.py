@@ -3,6 +3,7 @@ class Solution:
         satisfaction.sort(reverse=True)
         result=0
         _sum=0
+
         for i in range(len(satisfaction)):
             _sum += satisfaction[i]
             if _sum < 0:
